@@ -27,7 +27,17 @@ xhr.onload = () => {
       }
       
     }
-
+    function fir(){
+      document.querySelector("tbody").replaceChildren();
+      for(var i=0;i<20;i++){
+        let tr1=document.createElement("tr");
+        document.querySelector("tbody").appendChild(tr1).setAttribute("id",`${i}`)
+        for(var j in data[i]){
+          document.getElementById(`${i}`).innerHTML+=`<td>${data[i][j]}</td>` 
+        }
+        
+      }
+    }
 
     function sec(){
       let num=0
@@ -79,6 +89,7 @@ xhr.onload = () => {
       }
     }
 
+    document.getElementById("fir").addEventListener("click",fir)
     document.getElementById("sec").addEventListener("click",sec)
     document.getElementById("thi").addEventListener("click",thi)
     document.getElementById("fou").addEventListener("click",fou)
